@@ -1,2 +1,2 @@
 # yt-rapidAPI
-YouTube Clone Application in React JS using RapidAPI
+YouTube Application using React JS with RapidAPI
