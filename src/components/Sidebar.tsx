@@ -3,6 +3,13 @@ import { Stack } from "@mui/material";
 
 import { categories } from "../utils/constants";
 
+interface Category {
+    name?: string,
+    icon?: any
+  }
+
+const selectedCategory:string = 'New'
+
 const Sidebar = () =>  (
     <Stack
         direction="row"
@@ -12,12 +19,21 @@ const Sidebar = () =>  (
             flexDirection: { md: "column" },
         }}
     >
-        {categories.map((category) => (
+        {categories.map((category:Category) => (
             <button 
                 className="category-btn"
+                style={{   
+                    background: category.name === selectedCategory as string && "#FC1503" as any,
+                    color: "white",
+                 }}
+                 key={category.name}
             >
-                <span>{category.icon}</span>
-                <span>{category.name}</span>
+                <span style={{ color: category.name === selectedCategory ? "white" : "red", marginRight: "15px" }}>
+                    {category.icon}
+                </span>
+                <span style={{ opacity: category.name === selectedCategory ? "1" : "0.8" }}>
+                    {category.name}
+                </span>
             </button>
         ))}
     </Stack>
