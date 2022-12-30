@@ -8,9 +8,7 @@ interface Category {
     icon?: any
   }
 
-const selectedCategory:string = 'New'
-
-const Sidebar = () =>  (
+const Sidebar = ({ selectedCategory, setSelectedCategory }: any) =>  (
     <Stack
         direction="row"
         sx={{
@@ -22,6 +20,7 @@ const Sidebar = () =>  (
         {categories.map((category:Category) => (
             <button 
                 className="category-btn"
+                onClick={()=>setSelectedCategory(category.name)}
                 style={{   
                     background: category.name === selectedCategory as string && "#FC1503" as any,
                     color: "white",
