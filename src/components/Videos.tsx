@@ -1,7 +1,7 @@
 import React from 'react'
 import { Stack, Box } from "@mui/material";
 
-// import { ChannelCard, Loader, VideoCard } from "./";
+import { ChannelCard, VideoCard } from "./";
 
 const Videos = ({videos, direction}:{videos:any, direction?:any}) => {
     // if(!videos?.length) return <Loader />;
@@ -10,8 +10,8 @@ const Videos = ({videos, direction}:{videos:any, direction?:any}) => {
         <Stack direction={direction || "row"} flexWrap="wrap" justifyContent="start" alignItems="start" gap={2}>
         {videos.map(({item, idx}:any) => (
         <Box key={idx}>
-            {/* {item.id.videoId && <VideoCard video={item} /> }
-            {item.id.channelId && <ChannelCard channelDetail={item} />} */}
+            {item.id.videoId && <VideoCard  /> }
+            {item.id.channelId && <ChannelCard  />}
         </Box>
         ))}
     </Stack>
